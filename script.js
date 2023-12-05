@@ -5,7 +5,7 @@ const prevBtn = document.getElementById("prev");
 let pos = 1; 
 
 function next() {
-	// if(prevBtn.disabled) prevBtn.disabled = false;
+	if(prevBtn.disabled) prevBtn.disabled = false;
 	if(pos < 5){
 		const nextLine = currElement.nextElementSibling;
 		nextLine.classList.add("active");
@@ -15,16 +15,16 @@ function next() {
 		currElement = nextCircle;
 	    pos++;
 
-		// if(pos === 5){
-		// 	nextBtn.disabled = true;
-		// }
+		if(pos === 5){
+			nextBtn.disabled = true;
+		}
 	}else{
 		alert("Reached limit");
 	} 
 } 
  
 function prev() {
-	// if(nextBtn.disabled) nextBtn.disabled = false;
+	if(nextBtn.disabled) nextBtn.disabled = false;
 	if(pos !== 1){
 		currElement.classList.remove("active");
 		const prevLine = currElement.previousElementSibling;
@@ -32,9 +32,9 @@ function prev() {
 		currElement = prevLine.previousElementSibling;
 		pos--;
 
-		// if(pos === 1){
-		// 	prevBtn.disabled = true;
-		// }
+		if(pos === 1){
+			prevBtn.disabled = true;
+		}
 	}
 	
 }
