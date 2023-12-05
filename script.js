@@ -25,16 +25,15 @@ function next() {
  
 function prev() {
 	if(nextBtn.disabled) nextBtn.disabled = false;
+	if(pos === 1){
+			prevBtn.disabled = true;
+		}
 	if(pos !== 1){
 		currElement.classList.remove("active");
 		const prevLine = currElement.previousElementSibling;
 		prevLine.classList.remove("active");	
 		currElement = prevLine.previousElementSibling;
-		pos--;
-
-		if(pos === 1){
-			prevBtn.disabled = true;
-		}
+		pos--;	
 	}
 	
 }
